@@ -47,8 +47,9 @@ dependencies {
 
     //api used for dependency sharing with module:app
     api "com.google.dagger:hilt-android:2.44"
-    kapt "com.google.dagger:hilt-compiler:2.44"
+    api 'com.jakewharton.timber:timber:5.0.1'
 
+    kapt "com.google.dagger:hilt-compiler:2.44"
     implementation "androidx.fragment:fragment-ktx:1.5.5"
 
 }
