@@ -13,9 +13,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.splash_screen)
+        setContentView(R.layout.activity_main)
 
-        val button = findViewById<Button>(R.id.button_next_v1)
+/*        val button = findViewById<Button>(R.id.button_next_v1)
         val progressVar = findViewById<ImageView>(R.id.progress_bar)
         val imageHero = findViewById<ImageView>(R.id.image_view_hero)
 
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, "Navigate time", Toast.LENGTH_SHORT).show()
                 }
             }
-        }
+        }*/
     }
 
     sealed class ProgressState {
