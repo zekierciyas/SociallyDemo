@@ -29,3 +29,7 @@ google-services.json
 # Android Profiling
 *.hprof
 app/src/.DS_Store
+.DS_Store
+presentation/.DS_Store
+presentation/.DS_Store
+presentation/.DS_Store
