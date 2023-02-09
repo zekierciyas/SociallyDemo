@@ -9,10 +9,19 @@
     </style>
 
     <style name="text_bold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_bold</item>
         <item name="lineHeight">59sp</item>
         <item name="fontWeight">700</item>
         <item name="android:textColor">#000000</item>
         <item name="android:textSize">39sp</item>
+    </style>
+
+    <style name="text_bold_small" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="lineHeight">59sp</item>
+        <item name="fontWeight">700</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">25sp</item>
     </style>
 
 

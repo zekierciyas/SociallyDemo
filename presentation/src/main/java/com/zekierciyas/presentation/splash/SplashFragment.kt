@@ -1,4 +1,4 @@
-package com.zekierciyas.presentation
+package com.zekierciyas.presentation.splash
 
 import android.os.Bundle
 import android.view.View
@@ -7,12 +7,16 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.zekierciyas.base.setBackground
 import com.zekierciyas.base.setDrawable
 import com.zekierciyas.base.viewBinding
+import com.zekierciyas.presentation.R
 import com.zekierciyas.presentation.databinding.SplashScreenBinding
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
 class SplashFragment : Fragment(R.layout.splash_screen) {
 
@@ -51,6 +55,7 @@ class SplashFragment : Fragment(R.layout.splash_screen) {
 
                         is SplashState.SplashV3 -> {
                             Timber.d("Navigating to next screen executed 3")
+                            findNavController().navigate(com.zekierciyas.base.R.id.action_splashFragment_to_profileScreenFragment2)
                         }
                     }
                 }

@@ -1,4 +1,4 @@
-package com.zekierciyas.presentation
+package com.zekierciyas.presentation.splash
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

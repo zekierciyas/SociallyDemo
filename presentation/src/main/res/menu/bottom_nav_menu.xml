@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_progress_bar"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/messages"
+        android:icon="@drawable/ic_progress_bar"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/placeholder"
+        android:title="" />
+
+    <item
+        android:id="@+id/likes"
+        android:icon="@drawable/ic_progress_bar"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_progress_bar"
+        android:title="Settings" />
+
+</menu>
