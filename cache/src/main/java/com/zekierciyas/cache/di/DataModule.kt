@@ -1,14 +1,11 @@
-package com.zekierciyas.cache
+package com.zekierciyas.cache.di
 
-import dagger.Component
+import com.zekierciyas.cache.data.ProfileDataProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.FragmentComponent
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Named
 import javax.inject.Singleton
-import kotlin.text.Typography.dagger
 
 @InstallIn(SingletonComponent::class)
 @Module

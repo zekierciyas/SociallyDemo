@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
-    <Button
+    <ImageView
         android:id="@+id/button_next_v1"
         android:layout_width="0dp"
         android:layout_height="0dp"

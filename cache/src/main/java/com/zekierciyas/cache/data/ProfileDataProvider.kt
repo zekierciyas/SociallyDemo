@@ -1,4 +1,6 @@
-package com.zekierciyas.cache
+package com.zekierciyas.cache.data
+
+import com.zekierciyas.cache.R
 
 
 class ProfileDataProvider{

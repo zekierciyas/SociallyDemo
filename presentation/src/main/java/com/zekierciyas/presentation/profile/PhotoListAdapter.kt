@@ -4,11 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.zekierciyas.base.setDrawable
-import com.zekierciyas.cache.ProfileDataProvider
+import com.zekierciyas.cache.data.ProfileDataProvider
 import com.zekierciyas.presentation.databinding.ProfileListItemBinding
 import dagger.hilt.android.scopes.FragmentScoped
-import javax.inject.Inject
-import javax.inject.Singleton
 
 @FragmentScoped
 class PhotoListAdapter(

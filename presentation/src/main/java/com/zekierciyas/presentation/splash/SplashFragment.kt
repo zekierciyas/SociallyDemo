@@ -46,12 +46,12 @@ class SplashFragment : Fragment(R.layout.splash_screen) {
                     when (it) {
                         is SplashState.SplashV1 -> {
                             binding.imageViewHero.setDrawable(R.drawable.ic_hero_img_v2)
-                            binding.buttonNextV1.setBackground(R.drawable.ic_button_next_v2)
+                            binding.buttonNextV1.setDrawable(R.drawable.ic_button_next_v2)
                             binding.progressBar.setDrawable(R.drawable.ic_progress_bar_second)
                         }
 
                         is SplashState.SplashV2 -> {
-                            binding.buttonNextV1.setBackground(R.drawable.ic_button_next_v1)
+                            binding.buttonNextV1.setDrawable(R.drawable.ic_button_next_v1)
                             binding.progressBar.setDrawable(R.drawable.ic_progress_bar_third)
                         }
 
