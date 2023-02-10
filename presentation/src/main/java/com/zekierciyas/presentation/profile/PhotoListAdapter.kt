@@ -4,11 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.zekierciyas.base.setDrawable
+import com.zekierciyas.cache.ProfileDataProvider
 import com.zekierciyas.presentation.databinding.ProfileListItemBinding
+import dagger.hilt.android.scopes.FragmentScoped
+import javax.inject.Inject
+import javax.inject.Singleton
 
+@FragmentScoped
 class PhotoListAdapter(
-    var photoList: List<Int>,
 ) : RecyclerView.Adapter<PhotoListAdapter.ViewHolder>() {
+
+    private lateinit var dummyData: ProfileDataProvider
 
     inner class ViewHolder(val binding: ProfileListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -20,13 +26,17 @@ class PhotoListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder){
-            with(photoList[position]){
+            with(dummyData.data[position]){
                 binding.imageView.setDrawable(drawable = this)
             }
         }
     }
  
     override fun getItemCount(): Int {
-        return photoList.size
+        return dummyData.data.size
+    }
+
+    fun provideData(dummyData: ProfileDataProvider) {
+        this.dummyData = dummyData
     }
 }

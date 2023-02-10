@@ -14,10 +14,12 @@ import com.zekierciyas.base.setDrawable
 import com.zekierciyas.base.viewBinding
 import com.zekierciyas.presentation.R
 import com.zekierciyas.presentation.databinding.SplashScreenBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class SplashFragment : Fragment(R.layout.splash_screen) {
 
     private val binding by viewBinding(SplashScreenBinding::bind)
