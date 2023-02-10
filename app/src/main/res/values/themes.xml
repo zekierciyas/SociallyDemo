@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools" >
     <!-- Base application theme. -->
     <style name="Theme.SocialAppDemo" parent="Theme.MaterialComponents.Light.NoActionBar">
 
@@ -7,5 +7,6 @@
         <item name="colorPrimaryVariant">#E91E63</item>
         <item name="colorOnPrimary">#FFFFFF</item>
     </style>
+
 
 </resources>

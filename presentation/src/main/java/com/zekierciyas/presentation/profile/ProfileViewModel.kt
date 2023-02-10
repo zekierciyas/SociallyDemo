@@ -13,3 +13,4 @@ class ProfileViewModel @Inject constructor(
 
     fun getData(): ProfileDataProvider = dummyData
 }
+

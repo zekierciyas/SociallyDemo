@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.zekierciyas.base.viewBinding
@@ -25,6 +26,8 @@ class ProfileScreenFragment: Fragment(R.layout.profile_screen) {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerview()
+
+        navBarClickListener()
     }
 
     private fun setupRecyclerview() {
@@ -33,7 +36,21 @@ class ProfileScreenFragment: Fragment(R.layout.profile_screen) {
         binding.recyclerView.layoutManager = staggeredGridLayoutManager
         // Sending reference and data to Adapter
         // Setting Adapter to RecyclerView
-        adapter!!.provideData(viewModel.getData())
+        adapter!!.provideData(viewModel.getData().data)
         binding.recyclerView.adapter = adapter
+    }
+
+    private fun navBarClickListener() {
+        binding.include.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    findNavController().navigate(R.id.action_profileScreenFragment_to_homeScreenFragment)
+                    true
+                }
+                else -> {true}
+            }
+
+
+        }
     }
 }
