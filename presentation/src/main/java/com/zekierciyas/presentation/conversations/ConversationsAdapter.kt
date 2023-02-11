@@ -22,7 +22,9 @@ class ConversationsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ConversationsListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
+        return ViewHolder(binding).listen { pos, type ->
+            onItemClick!!.invoke(dummyData.data[pos])
+        }
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

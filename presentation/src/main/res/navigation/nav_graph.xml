@@ -45,6 +45,14 @@
     <fragment
         android:id="@+id/conversationsScreenFragment"
         android:name="com.zekierciyas.presentation.conversations.ConversationsScreenFragment"
-        android:label="ConversationsScreenFragment" />
+        android:label="ConversationsScreenFragment" >
+        <action
+            android:id="@+id/action_conversationsScreenFragment_to_messagingScreenFragment"
+            app:destination="@id/messagingScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messagingScreenFragment"
+        android:name="com.zekierciyas.presentation.messaging.MessagingScreenFragment"
+        android:label="MessagingScreenFragment" />
 
 </navigation>

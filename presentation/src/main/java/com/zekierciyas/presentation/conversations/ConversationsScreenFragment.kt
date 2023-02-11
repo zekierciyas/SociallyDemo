@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zekierciyas.base.viewBinding
 import com.zekierciyas.presentation.R
@@ -35,7 +36,7 @@ class ConversationsScreenFragment: Fragment(R.layout.conversations_screen) {
             LinearLayoutManager.VERTICAL,
             false
         )
-        // Setting Adapter to RecyclerView
+        //Setting Adapter to RecyclerView
         adapter!!.provideData(viewModel.getConversationData())
         binding.recyclerView.adapter = adapter
     }
@@ -45,6 +46,8 @@ class ConversationsScreenFragment: Fragment(R.layout.conversations_screen) {
         adapter!!.onItemClick = {
             //Setting the selected data to shared viewModel
             viewModel.currentSelectedConversation = it
+            //Navigation to MessagingFragment
+            findNavController().navigate(R.id.action_conversationsScreenFragment_to_messagingScreenFragment)
         }
     }
 }
