@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavDestination
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zekierciyas.base.viewBinding
 import com.zekierciyas.presentation.R
@@ -31,6 +33,8 @@ class HomeScreenFragment: Fragment(R.layout.home_screen) {
         setupStoryRecyclerView()
 
         setupFeedRecyclerView()
+
+        navBarClickListener()
     }
 
     private fun setupStoryRecyclerView() {
@@ -54,7 +58,29 @@ class HomeScreenFragment: Fragment(R.layout.home_screen) {
 
         adapterFeed!!.provideData(viewModel.getFeedData().data)
         binding.feedVerticalScrollView.adapter = adapterFeed
+    }
 
+    private fun navBarClickListener() {
+        binding.bottom.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.profile -> {
+                    findNavController().navigate(R.id.action_homeScreenFragment_to_profileScreenFragment)
+                    true
+                }
 
+                R.id.messages -> {
+                    findNavController().navigate(R.id.action_global_conversationsScreenFragment)
+                    true
+                }
+                else -> {true}
+            }
+
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //Setting default checked item when life cycle onResumed()
+        binding.bottom.bottomNavigationView.menu.findItem(R.id.home).isChecked = true
     }
 }

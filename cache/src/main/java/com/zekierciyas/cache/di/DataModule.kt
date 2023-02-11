@@ -15,15 +15,14 @@ object DataModule {
 
     @Provides
     @Singleton
-    fun provideDummyProfile() : ProfileDataProvider = ProfileDataProvider()
+    fun provideDummyProfile(): ProfileDataProvider = ProfileDataProvider()
 
     @Provides
     @Singleton
-    fun provideDummyStories() : StoryDataProvider = StoryDataProvider()
+    fun provideDummyStories(): StoryDataProvider = StoryDataProvider()
 
     @Provides
     @Singleton
-    fun provideDummyFeed() : FeedDataProvider = FeedDataProvider()
-
+    fun provideDummyFeed(): FeedDataProvider = FeedDataProvider()
 
 }

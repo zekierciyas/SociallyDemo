@@ -47,10 +47,19 @@ class ProfileScreenFragment: Fragment(R.layout.profile_screen) {
                     findNavController().navigate(R.id.action_profileScreenFragment_to_homeScreenFragment)
                     true
                 }
+
+                R.id.messages -> {
+                    findNavController().navigate(R.id.action_global_conversationsScreenFragment2)
+                    true
+                }
                 else -> {true}
             }
-
-
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //Setting default checked item when life cycle onResumed()
+        binding.include.bottomNavigationView.menu.findItem(R.id.profile).isChecked = true
     }
 }
