@@ -19,7 +19,7 @@ class HomeScreenFragment: Fragment(R.layout.home_screen) {
     private val binding by viewBinding(HomeScreenBinding::bind)
     private val viewModel by viewModels<HomeViewModel>()
 
-    var adapter: PhotoListAdapter? = null
+    var adapter: StoryListAdapter? = null
         @Inject set
 
     var adapterFeed: HomeFeedListAdapter? = null
@@ -41,7 +41,7 @@ class HomeScreenFragment: Fragment(R.layout.home_screen) {
         )
         // Sending reference and data to Adapter
         // Setting Adapter to RecyclerView
-        adapter!!.provideData(viewModel.getStoryData().data)
+        adapter!!.provideData(viewModel.getStoryData())
         binding.storyHorizontalScrollView.adapter = adapter
     }
 
