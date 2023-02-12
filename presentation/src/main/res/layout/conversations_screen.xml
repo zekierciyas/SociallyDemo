@@ -58,6 +58,8 @@
                 android:id="@+id/search_view"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 style="@style/ConversationSearch"
                 app:iconifiedByDefault="false"
                 android:hint="Search for contacts..." />

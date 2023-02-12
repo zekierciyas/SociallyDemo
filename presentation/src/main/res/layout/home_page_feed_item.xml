@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -70,7 +70,7 @@
         android:id="@+id/favorite_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="5dp"
         android:src="@drawable/ic_favorite_count"
         app:layout_constraintBottom_toBottomOf="@+id/card_view_favorite"
         app:layout_constraintStart_toStartOf="@+id/card_view_favorite"
@@ -80,7 +80,7 @@
         android:id="@+id/comment_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="5dp"
         android:src="@drawable/ic_comment_count"
         app:layout_constraintBottom_toBottomOf="@+id/card_view_comment"
         app:layout_constraintStart_toStartOf="@+id/card_view_comment"
@@ -90,11 +90,50 @@
         android:id="@+id/saved_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="5dp"
         android:src="@drawable/ic_saved_count"
         app:layout_constraintBottom_toBottomOf="@+id/card_view_saved"
         app:layout_constraintStart_toStartOf="@+id/card_view_saved"
         app:layout_constraintTop_toTopOf="@+id/card_view_saved" />
+
+    <TextView
+        android:id="@+id/text_comment_count"
+        style="@style/text_small_white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_view_favorite"
+        app:layout_constraintEnd_toEndOf="@+id/card_view_comment"
+        app:layout_constraintStart_toEndOf="@+id/comment_count"
+        app:layout_constraintTop_toTopOf="@+id/card_view_favorite"
+        tools:text="14k" />
+
+    <TextView
+        android:id="@+id/text_favorite_count"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/text_small_white"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_view_favorite"
+        app:layout_constraintEnd_toEndOf="@+id/card_view_favorite"
+        app:layout_constraintStart_toEndOf="@+id/favorite_count"
+        app:layout_constraintTop_toTopOf="@+id/card_view_favorite"
+        tools:text="14k" />
+
+    <TextView
+        android:id="@+id/text_saving_count"
+        style="@style/text_small_white"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_view_favorite"
+        app:layout_constraintEnd_toEndOf="@+id/card_view_saved"
+        app:layout_constraintStart_toEndOf="@+id/saved_count"
+        app:layout_constraintTop_toTopOf="@+id/card_view_favorite"
+        tools:text="14k" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

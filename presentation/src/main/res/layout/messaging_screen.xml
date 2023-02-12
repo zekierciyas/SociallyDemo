@@ -65,11 +65,57 @@
         android:id="@+id/recycler_view_messaging"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.6"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/card_view_message_send"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.40"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_message_send"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="4dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/edit_text_message"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:elevation="15dp"
+        android:hint="Write a message..."
+        android:background="@null"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/card_view_message_send"
+        app:layout_constraintEnd_toStartOf="@+id/button_send_message"
+        app:layout_constraintStart_toStartOf="@+id/card_view_message_send"
+        app:layout_constraintTop_toTopOf="@+id/card_view_message_send" />
+
+    <ImageView
+        android:id="@+id/button_send_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:clickable="true"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_view_message_send"
+        app:layout_constraintEnd_toEndOf="@+id/card_view_message_send"
+        app:layout_constraintTop_toTopOf="@+id/card_view_message_send"
+        app:srcCompat="@drawable/ic_message_send" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
