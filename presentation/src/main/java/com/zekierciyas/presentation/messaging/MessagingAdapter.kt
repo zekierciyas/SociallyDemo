@@ -56,10 +56,16 @@ class MessagingAdapter internal constructor(
         return listMessage.size
     }
 
-    fun updateList(newList: List<Message>) {
-        this.listMessage.addAll(newList.requireNoNulls())
+    fun sendMessage(newMessage: String?) {
+        if (newMessage.isNullOrEmpty()) return
+        this.listMessage.add(
+            Message(
+            text = newMessage,
+            type = MessageType.SENT
+            )
+        )
+        notifyDataSetChanged()
     }
-
 }
 
 

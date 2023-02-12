@@ -23,6 +23,9 @@ class HomeFeedListAdapter : RecyclerView.Adapter<HomeFeedListAdapter.ViewHolder>
         with(holder){
             with(dummyData[position]){
                 binding.postImageView.setDrawable(drawable = this.postImage)
+                binding.textCommentCount.text =this.commentCount
+                binding.textFavoriteCount.text =this.favoriteCount
+                binding.textSavingCount.text =this.savingCount
             }
         }
     }

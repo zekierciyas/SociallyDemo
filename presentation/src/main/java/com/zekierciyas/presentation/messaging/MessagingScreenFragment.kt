@@ -2,10 +2,13 @@ package com.zekierciyas.presentation.messaging
 
 import android.os.Bundle
 import android.view.View
+import android.view.View.OnFocusChangeListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.internal.ViewUtils.hideKeyboard
+import com.zekierciyas.base.hideSoftKeyboard
 import com.zekierciyas.base.setDrawable
 import com.zekierciyas.base.viewBinding
 import com.zekierciyas.presentation.R
@@ -18,6 +21,7 @@ class MessagingScreenFragment: Fragment(R.layout.messaging_screen) {
 
     private val binding by viewBinding(MessagingScreenBinding::bind)
     private val viewModel by activityViewModels<ConversationSharedViewModel>()
+    private lateinit var adapter: MessagingAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,7 +44,7 @@ class MessagingScreenFragment: Fragment(R.layout.messaging_screen) {
             LinearLayoutManager.VERTICAL,
             false
         )
-        val adapter = MessagingAdapter(viewModel.currentSelectedConversation!!.messages)
+        adapter = MessagingAdapter(viewModel.currentSelectedConversation!!.messages)
         binding.recyclerViewMessaging.adapter = adapter
     }
 
@@ -48,5 +52,11 @@ class MessagingScreenFragment: Fragment(R.layout.messaging_screen) {
         binding.backButton.setOnClickListener {
             findNavController().popBackStack()
         }
+
+       binding.buttonSendMessage.setOnClickListener {
+           hideSoftKeyboard()
+           adapter.sendMessage(binding.editTextMessage.text.toString())
+           binding.editTextMessage.text.clear()
+       }
     }
 }
