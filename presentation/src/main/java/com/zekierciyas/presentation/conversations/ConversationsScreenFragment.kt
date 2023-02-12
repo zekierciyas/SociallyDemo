@@ -2,6 +2,7 @@ package com.zekierciyas.presentation.conversations
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -10,9 +11,7 @@ import com.zekierciyas.base.viewBinding
 import com.zekierciyas.presentation.R
 import com.zekierciyas.presentation.common.ConversationSharedViewModel
 import com.zekierciyas.presentation.databinding.ConversationsScreenBinding
-import androidx.appcompat.widget.SearchView
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class ConversationsScreenFragment: Fragment(R.layout.conversations_screen) {
@@ -58,7 +57,10 @@ class ConversationsScreenFragment: Fragment(R.layout.conversations_screen) {
                 adapter!!.filter.filter(newText)
                 return false
             }
-
         })
+
+        binding.backButton.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }

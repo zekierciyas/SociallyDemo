@@ -4,15 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zekierciyas.base.setDrawable
 import com.zekierciyas.base.viewBinding
 import com.zekierciyas.presentation.R
 import com.zekierciyas.presentation.common.ConversationSharedViewModel
 import com.zekierciyas.presentation.databinding.MessagingScreenBinding
-import com.zekierciyas.presentation.databinding.ProfileScreenBinding
-import com.zekierciyas.presentation.profile.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,6 +26,7 @@ class MessagingScreenFragment: Fragment(R.layout.messaging_screen) {
 
         setUI()
 
+        handleClickEvent()
     }
 
     private fun setUI() {
@@ -43,5 +42,11 @@ class MessagingScreenFragment: Fragment(R.layout.messaging_screen) {
         )
         val adapter = MessagingAdapter(viewModel.currentSelectedConversation!!.messages)
         binding.recyclerViewMessaging.adapter = adapter
+    }
+
+    private fun handleClickEvent() {
+        binding.backButton.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }

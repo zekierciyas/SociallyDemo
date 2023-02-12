@@ -1,15 +1,12 @@
 package com.zekierciyas.presentation.di
 
-import com.zekierciyas.cache.data.ConversationsDataProvider
-import com.zekierciyas.presentation.conversations.ConversationsAdapter
 import com.zekierciyas.presentation.home.StoryListAdapter
-import com.zekierciyas.presentation.profile.HomeFeedListAdapter
+import com.zekierciyas.presentation.home.HomeFeedListAdapter
 import com.zekierciyas.presentation.profile.PhotoListAdapter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Inject
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)

@@ -27,7 +27,7 @@ class ProfileScreenFragment: Fragment(R.layout.profile_screen) {
 
         setupRecyclerview()
 
-        navBarClickListener()
+        handleClickEvent()
     }
 
     private fun setupRecyclerview() {
@@ -40,7 +40,7 @@ class ProfileScreenFragment: Fragment(R.layout.profile_screen) {
         binding.recyclerView.adapter = adapter
     }
 
-    private fun navBarClickListener() {
+    private fun handleClickEvent() {
         binding.include.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
@@ -54,6 +54,10 @@ class ProfileScreenFragment: Fragment(R.layout.profile_screen) {
                 }
                 else -> {true}
             }
+        }
+
+        binding.backButton.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

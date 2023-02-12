@@ -1,4 +1,4 @@
-package com.zekierciyas.presentation.profile
+package com.zekierciyas.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
