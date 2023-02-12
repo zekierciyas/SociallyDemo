@@ -1,5 +1,6 @@
 package com.zekierciyas.presentation.di
 
+import com.zekierciyas.cache.data.ConversationsDataProvider
 import com.zekierciyas.presentation.conversations.ConversationsAdapter
 import com.zekierciyas.presentation.home.StoryListAdapter
 import com.zekierciyas.presentation.profile.HomeFeedListAdapter
@@ -8,6 +9,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Inject
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -25,8 +27,4 @@ object AppModule {
     @Provides
     @Singleton
     fun provideHomeFeedListAdapter(): HomeFeedListAdapter = HomeFeedListAdapter()
-
-    @Provides
-    @Singleton
-    fun provideConversationsListAdapter(): ConversationsAdapter = ConversationsAdapter()
 }

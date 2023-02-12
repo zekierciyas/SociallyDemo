@@ -10,6 +10,7 @@ import com.zekierciyas.base.viewBinding
 import com.zekierciyas.presentation.R
 import com.zekierciyas.presentation.common.ConversationSharedViewModel
 import com.zekierciyas.presentation.databinding.ConversationsScreenBinding
+import androidx.appcompat.widget.SearchView
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -19,8 +20,7 @@ class ConversationsScreenFragment: Fragment(R.layout.conversations_screen) {
     private val binding by viewBinding(ConversationsScreenBinding::bind)
     private val viewModel by activityViewModels<ConversationSharedViewModel>()
 
-    var adapter: ConversationsAdapter? = null
-        @Inject set
+    private lateinit var adapter: ConversationsAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,18 +36,29 @@ class ConversationsScreenFragment: Fragment(R.layout.conversations_screen) {
             LinearLayoutManager.VERTICAL,
             false
         )
-        //Setting Adapter to RecyclerView
-        adapter!!.provideData(viewModel.getConversationData())
+        adapter = ConversationsAdapter(viewModel.getConversationData())
         binding.recyclerView.adapter = adapter
     }
 
     private fun handleClickEvent() {
         //Observing recyclerView click events
-        adapter!!.onItemClick = {
+        adapter.onItemClick = {
             //Setting the selected data to shared viewModel
             viewModel.currentSelectedConversation = it
             //Navigation to MessagingFragment
             findNavController().navigate(R.id.action_conversationsScreenFragment_to_messagingScreenFragment)
         }
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                //Allows character changes to pass into the adapter class
+                adapter!!.filter.filter(newText)
+                return false
+            }
+
+        })
     }
 }

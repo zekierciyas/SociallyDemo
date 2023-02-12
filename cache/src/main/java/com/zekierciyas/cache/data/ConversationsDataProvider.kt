@@ -4,7 +4,7 @@ import com.zekierciyas.cache.R
 import com.zekierciyas.cache.model.ConversationModel
 
 class ConversationsDataProvider {
-    val data = listOf(
+    var data = listOf(
         ConversationModel(
             id = 1,
             name = "Malena Tudi",
