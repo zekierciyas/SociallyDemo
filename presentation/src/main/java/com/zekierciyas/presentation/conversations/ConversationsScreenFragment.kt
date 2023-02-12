@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.zekierciyas.base.hideSoftKeyboard
 import com.zekierciyas.base.viewBinding
 import com.zekierciyas.presentation.R
 import com.zekierciyas.presentation.common.ConversationSharedViewModel
@@ -50,11 +51,12 @@ class ConversationsScreenFragment: Fragment(R.layout.conversations_screen) {
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
+                hideSoftKeyboard()
+                return true
             }
             override fun onQueryTextChange(newText: String?): Boolean {
                 //Allows character changes to pass into the adapter class
-                adapter!!.filter.filter(newText)
+                adapter.filter.filter(newText)
                 return false
             }
         })
@@ -62,5 +64,7 @@ class ConversationsScreenFragment: Fragment(R.layout.conversations_screen) {
         binding.backButton.setOnClickListener {
             findNavController().popBackStack()
         }
+
     }
+
 }
