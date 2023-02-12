@@ -1,6 +1,7 @@
-package com.zekierciyas.socialappdemo
+package com.zekierciyas.sociallydemo
 
 import android.app.Application
+import com.zekierciyas.socialappdemo.BuildConfig
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 import timber.log.Timber.Forest.plant

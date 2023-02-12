@@ -1,11 +1,8 @@
-package com.zekierciyas.socialappdemo
+package com.zekierciyas.sociallydemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Toast
-import androidx.core.content.ContextCompat
+import com.zekierciyas.socialappdemo.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
