@@ -15,3 +15,11 @@ fun ImageView.setDrawable(@DrawableRes drawable: Int) {
 fun Button.setBackground(@DrawableRes drawable: Int) {
     this.setBackgroundResource(drawable)
 }
+
+fun View.inVisible() {
+    this.visibility = View.INVISIBLE
+}
+
+fun View.reVisible() {
+    if(this.visibility == View.INVISIBLE) this.visibility = View.VISIBLE
+}

@@ -10,7 +10,8 @@
         android:label="SplashFragment" >
         <action
             android:id="@+id/action_splashFragment_to_homeScreenFragment"
-            app:popUpToInclusive="false"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
             app:destination="@id/navigation2" />
     </fragment>
 

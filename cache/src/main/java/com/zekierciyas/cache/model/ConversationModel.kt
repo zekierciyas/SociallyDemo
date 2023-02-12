@@ -6,5 +6,6 @@ data class ConversationModel(
     val id: Int,
     val name: String,
     val message: String,
-    @DrawableRes val photo: Int
+    @DrawableRes val photo: Int,
+    val messages: List<Message> = arrayListOf()
 )

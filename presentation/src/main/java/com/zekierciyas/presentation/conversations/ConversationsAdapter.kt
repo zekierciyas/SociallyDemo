@@ -84,8 +84,6 @@ class ConversationsAdapter @Inject constructor(
                 filteredList = results?.values as ArrayList<ConversationModel>
                 notifyDataSetChanged()
             }
-
         }
     }
-
 }
