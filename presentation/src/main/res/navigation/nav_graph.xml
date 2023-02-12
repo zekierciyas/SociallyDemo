@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.zekierciyas.presentation.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_homeScreenFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/navigation2" />
+    </fragment>
+
+    <navigation android:id="@+id/navigation2"
+        app:startDestination="@id/homeScreenFragment">
+        <fragment
+            android:id="@+id/homeScreenFragment"
+            android:name="com.zekierciyas.presentation.home.HomeScreenFragment"
+            android:label="HomeScreenFragment">
+            <action
+                android:id="@+id/action_homeScreenFragment_to_profileScreenFragment"
+                app:destination="@id/navigation3" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_conversationsScreenFragment"
+            app:destination="@id/conversationsScreenFragment" />
+    </navigation>
+    <navigation android:id="@+id/navigation3"
+        app:startDestination="@id/profileScreenFragment">
+        <fragment
+            android:id="@+id/profileScreenFragment"
+            android:name="com.zekierciyas.presentation.profile.ProfileScreenFragment"
+            android:label="ProfileScreenFragment">
+            <action
+                android:id="@+id/action_profileScreenFragment_to_homeScreenFragment"
+                app:destination="@id/navigation2" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_conversationsScreenFragment2"
+            app:destination="@id/conversationsScreenFragment" />
+    </navigation>
+    <fragment
+        android:id="@+id/conversationsScreenFragment"
+        android:name="com.zekierciyas.presentation.conversations.ConversationsScreenFragment"
+        android:label="ConversationsScreenFragment" >
+        <action
+            android:id="@+id/action_conversationsScreenFragment_to_messagingScreenFragment"
+            app:destination="@id/messagingScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messagingScreenFragment"
+        android:name="com.zekierciyas.presentation.messaging.MessagingScreenFragment"
+        android:label="MessagingScreenFragment" />
+
+</navigation>

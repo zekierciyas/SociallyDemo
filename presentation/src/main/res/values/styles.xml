@@ -8,6 +8,13 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="text_small_white" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <style name="text_bold" parent="TextAppearance.AppCompat">
         <item name="fontFamily">@font/poppins_bold</item>
         <item name="lineHeight">59sp</item>
@@ -24,6 +31,13 @@
         <item name="android:textSize">25sp</item>
     </style>
 
+    <style name="ConversationSearch" parent="Base.Widget.AppCompat.SearchView">
+        <item name="searchIcon">@drawable/ic_search</item>
+    </style>
 
+    <style name="FabDiamondOverlay" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">8dp</item>
+    </style>
 
 </resources>

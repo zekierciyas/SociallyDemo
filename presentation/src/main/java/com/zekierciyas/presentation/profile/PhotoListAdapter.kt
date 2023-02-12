@@ -12,7 +12,7 @@ import dagger.hilt.android.scopes.FragmentScoped
 class PhotoListAdapter(
 ) : RecyclerView.Adapter<PhotoListAdapter.ViewHolder>() {
 
-    private lateinit var dummyData: ProfileDataProvider
+    private var dummyData = listOf<Int>()
 
     inner class ViewHolder(val binding: ProfileListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -24,17 +24,17 @@ class PhotoListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder){
-            with(dummyData.data[position]){
+            with(dummyData[position]){
                 binding.imageView.setDrawable(drawable = this)
             }
         }
     }
  
     override fun getItemCount(): Int {
-        return dummyData.data.size
+        return dummyData.size
     }
 
-    fun provideData(dummyData: ProfileDataProvider) {
+    fun provideData(dummyData: List<Int>) {
         this.dummyData = dummyData
     }
 }

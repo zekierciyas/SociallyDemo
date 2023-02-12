@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.zekierciyas.base.viewBinding
@@ -25,6 +26,8 @@ class ProfileScreenFragment: Fragment(R.layout.profile_screen) {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerview()
+
+        handleClickEvent()
     }
 
     private fun setupRecyclerview() {
@@ -33,7 +36,34 @@ class ProfileScreenFragment: Fragment(R.layout.profile_screen) {
         binding.recyclerView.layoutManager = staggeredGridLayoutManager
         // Sending reference and data to Adapter
         // Setting Adapter to RecyclerView
-        adapter!!.provideData(viewModel.getData())
+        adapter!!.provideData(viewModel.getData().data)
         binding.recyclerView.adapter = adapter
+    }
+
+    private fun handleClickEvent() {
+        binding.include.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    findNavController().navigate(R.id.action_profileScreenFragment_to_homeScreenFragment)
+                    true
+                }
+
+                R.id.messages -> {
+                    findNavController().navigate(R.id.action_global_conversationsScreenFragment2)
+                    true
+                }
+                else -> {true}
+            }
+        }
+
+        binding.backButton.setOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //Setting default checked item when life cycle onResumed()
+        binding.include.bottomNavigationView.menu.findItem(R.id.profile).isChecked = true
     }
 }

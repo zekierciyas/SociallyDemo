@@ -15,4 +15,9 @@
         <item name="android:textSize">39sp</item>
     </style>
 
+    <style name="FabShapeStyle" parent="ShapeAppearance.Material3.Corner.Small">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+    </style>
+
 </resources>

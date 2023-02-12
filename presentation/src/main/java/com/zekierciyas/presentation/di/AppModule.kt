@@ -1,5 +1,7 @@
 package com.zekierciyas.presentation.di
 
+import com.zekierciyas.presentation.home.StoryListAdapter
+import com.zekierciyas.presentation.home.HomeFeedListAdapter
 import com.zekierciyas.presentation.profile.PhotoListAdapter
 import dagger.Module
 import dagger.Provides
@@ -14,4 +16,12 @@ object AppModule {
     @Provides
     @Singleton
     fun providePhotoListAdapter(): PhotoListAdapter = PhotoListAdapter()
+
+    @Provides
+    @Singleton
+    fun provideStoryListAdapter(): StoryListAdapter = StoryListAdapter()
+
+    @Provides
+    @Singleton
+    fun provideHomeFeedListAdapter(): HomeFeedListAdapter = HomeFeedListAdapter()
 }
